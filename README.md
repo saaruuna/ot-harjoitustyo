@@ -6,5 +6,8 @@ Käytän Markdownia *ensimmäistä kertaa*! Tämä on **iso juttu**. _Siis **tod
 
 ### Viikko 1
 
-[gitlog.txt](https://github.com/saaruuna/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
-[komentorivi.txt](https://github.com/saaruuna/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
+Harjoitellaan lisää githubia...
+
+* [gitlog.txt](https://github.com/saaruuna/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
+* [komentorivi.txt](https://github.com/saaruuna/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
+
