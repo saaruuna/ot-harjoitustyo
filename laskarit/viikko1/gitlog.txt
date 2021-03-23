@@ -1,0 +1,122 @@
+commit c46704d3dd5276061160a3fb8171a54c4479f34a
+Author: saaruuna <uuna.saarela@gmail.com>
+Date:   Mon Mar 22 15:57:37 2021 +0200
+
+    harjoitellaan poistamista
+
+ tiedostoja/file2.txt                 | 0
+ tiedostoja/{file1.txt => file22.txt} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 5b6fb5049a88952947cc8df9d80d04f87726bb6b
+Author: saaruuna <uuna.saarela@gmail.com>
+Date:   Mon Mar 22 15:53:11 2021 +0200
+
+    tiedostojen harjoittelua
+
+ tiedostoja/file1.txt | 0
+ tiedostoja/file2.txt | 0
+ tiedostoja/file3.txt | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit f2346436bcef9b2e2f14cd882e2e6c36836e7eb7
+Author: saaruuna <uuna.saarela@gmail.com>
+Date:   Mon Mar 22 15:47:29 2021 +0200
+
+    tutustutaan patch-muotoon
+
+ eka.txt    | 10 +---------
+ kolmas.txt |  4 +++-
+ 2 files changed, 4 insertions(+), 10 deletions(-)
+
+commit 0564e0a796f77178279c06013549cdd898287530
+Author: saaruuna <uuna.saarela@gmail.com>
+Date:   Mon Mar 22 15:33:47 2021 +0200
+
+    poistettiin tiedosto.txt lopullisesti
+
+ tiedosto.txt | 392 -----------------------------------------------------------
+ 1 file changed, 392 deletions(-)
+
+commit 57eef5f1ec3310866b9f1d04ebe76b8dac800487
+Author: saaruuna <uuna.saarela@gmail.com>
+Date:   Mon Mar 22 15:33:12 2021 +0200
+
+    muutetaan tiedostojen nimiä
+
+ eka.txt | 392 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 392 insertions(+)
+
+commit f6a9c856f60cc47f766d0617e76ca2bc92c90155
+Author: saaruuna <uuna.saarela@gmail.com>
+Date:   Mon Mar 22 15:31:32 2021 +0200
+
+    poistettiin toinen.txt
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit b836e1671c707fef250ad1e471be7a3abbf33ad5
+Author: saaruuna <uuna.saarela@gmail.com>
+Date:   Mon Mar 22 15:29:17 2021 +0200
+
+    muutetaan tiedoston tekstejä
+
+ tiedosto.txt | 19 +------------------
+ 1 file changed, 1 insertion(+), 18 deletions(-)
+
+commit 9b44e713ceaa064665898c9d09abf86a42f4eeaa
+Author: saaruuna <uuna.saarela@gmail.com>
+Date:   Mon Mar 22 15:27:02 2021 +0200
+
+    paljon tekstiä tiedostoon
+
+ tiedosto.txt | 408 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 408 insertions(+)
+
+commit 0bf402581e589281daca9db7f87e20e911b58f8a
+Author: saaruuna <uuna.saarela@gmail.com>
+Date:   Mon Mar 22 14:41:41 2021 +0200
+
+    harjoittelua enenevissä määrin
+
+ stuff/things.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit ffdafa478c76960a41f3d62a318c312b4740800d
+Author: saaruuna <uuna.saarela@gmail.com>
+Date:   Mon Mar 22 14:40:21 2021 +0200
+
+    vielä lisää harjoittelua
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit d4160eac42b3a2379b9699b05d5772d136e97313
+Author: saaruuna <uuna.saarela@gmail.com>
+Date:   Mon Mar 22 14:38:11 2021 +0200
+
+    lisää harjoittelua
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 21a821e16b3617d36655366ec8f57748ba980da2
+Author: saaruuna <uuna.saarela@gmail.com>
+Date:   Mon Mar 22 14:34:45 2021 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit 74ae970b11b2751c5b638f062642d2a5dbf0ddeb
+Author: saaruuna <uuna.saarela@gmail.com>
+Date:   Mon Mar 22 14:32:28 2021 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
