@@ -10,6 +10,8 @@ Sovelluksessa ei ole kirjautumismahdollisuutta. Labyrinttejä luodaan ja selvite
 
 ## Käyttöliittymäluonnos
 
+![LabRat-käyttöliittymäluonnos](dokumentaatio/kuvat/LabRat-kayttis.jpg)
+
 ## Käyttökokemus
 
 Sovelluksessa tulisi olla helppo navigoida eri näkymien välillä. Sovelluksen kieli on englanti.
