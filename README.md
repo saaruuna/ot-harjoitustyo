@@ -1,4 +1,5 @@
 Linkki alustavaan määrittelydokumenttiin: [määrittelydokumentti](https://github.com/saaruuna/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
+
 Linkki työaikakirjanpitoon: [työaikakirjanpito](https://github.com/saaruuna/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)
 
 # Tämä on Markdownin harjoittelua
