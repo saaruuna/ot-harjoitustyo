@@ -1,3 +1,5 @@
+Linkki alustavaan määrittelydokumenttiin: [määrittelydokumentti](https://github.com/saaruuna/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
+
 # Tämä on Markdownin harjoittelua
 
 Käytän Markdownia *ensimmäistä kertaa*! Tämä on **iso juttu**. _Siis **todella** iso juttu._ Hauskaa hauskaa!
