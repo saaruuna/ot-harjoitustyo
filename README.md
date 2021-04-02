@@ -1,18 +1,9 @@
-Linkki alustavaan määrittelydokumenttiin: [määrittelydokumentti](https://github.com/saaruuna/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
+# LabRat-pelisovellus
 
-Linkki työaikakirjanpitoon: [työaikakirjanpito](https://github.com/saaruuna/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)
+LabRat on 2D-pelisovellus. Pelihahmona on rotta, jota ohjataan labyrintissa juustoa kohti ja vältellään rotanloukkuja. Käyttäjä voi selvittää labyrinttejä sekä tallentaa suunnittelemiaan labyrintteja pelin tietokantaan muiden pelaajien selvitettäväksi. 
 
-# Tämä on Markdownin harjoittelua
+## Dokumentaatio
 
-Käytän Markdownia *ensimmäistä kertaa*! Tämä on **iso juttu**. _Siis **todella** iso juttu._ Hauskaa hauskaa!
+[Määrittelydokumentti](https://github.com/saaruuna/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
 
-## Tehtävät
-
-### Viikko 1
-
-Harjoitellaan lisää githubia...
-
-* [gitlog.txt](https://github.com/saaruuna/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
-* [komentorivi.txt](https://github.com/saaruuna/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
-
-Tehdään paikalliseen repositorioon muutos, listätään, committataan mutta ei pushata...
+[Työaikakirjanpito](https://github.com/saaruuna/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)

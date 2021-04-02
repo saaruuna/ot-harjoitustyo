@@ -4,6 +4,13 @@
 
 Sovellus on 2D- peli nimeltä LabRat. Pelihahmo on rotta, jota ohjataan labyrintin sisällä olevaa juustoa kohti. Pelin voittaa, kun rotta saa juuston. Pelin häviää, jos astuu rotanloukkuun. Pelaajan on mahdollista selvittää labyrinttejä. Tämän lisäksi pelaaja voi luoda ja tallentaa labyrinttejä tietokantaan muiden pelaajien selvitettäväksi.
 
+Pelissä on seuraavat objektit:
+* Rotta
+* Seinä
+* Lattia
+* Juusto
+* Loukku
+
 ## Käyttäjät
 
 Sovelluksessa ei ole kirjautumismahdollisuutta. Labyrinttejä luodaan ja selvitetään kirjautumatta.
