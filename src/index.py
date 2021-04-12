@@ -1,5 +1,4 @@
 import pygame
-import os
 from lab import Lab
 
 LAB_MAP =   [[1, 1, 1, 1, 1],
@@ -15,8 +14,6 @@ def main():
     width = len(LAB_MAP[0])
     display_height = height * CELL_SIZE
     display_width = width * CELL_SIZE
-
-    os.environ["SDL_VIDEODRIVER"] = "dummy"
 
     # alustetaan ikkuna
     display = pygame.display.set_mode((display_width, display_height))
