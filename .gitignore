@@ -10,6 +10,6 @@
 
 /src/tests/__pycache__
 
-/src/.coverage
+.coverage
 
-/src/htmlcov
+htmlcov/
