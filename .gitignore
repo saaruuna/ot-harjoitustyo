@@ -9,3 +9,7 @@
 /src/__pycache__
 
 /src/tests/__pycache__
+
+/src/.coverage
+
+/src/htmlcov
