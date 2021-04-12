@@ -9,8 +9,8 @@ class Lab:
     def __init__(self, lab_map, cell_size):
         self.cell_size = cell_size
         self.rat = None
-        self.walls = pygame.sprite.Group()
         self.floors = pygame.sprite.Group()
+        self.walls = pygame.sprite.Group()
         self.traps = pygame.sprite.Group()
         self.cheeses = pygame.sprite.Group()
         self.all_sprites = pygame.sprite.Group()
@@ -28,9 +28,9 @@ class Lab:
                 normalized_y = y * self.cell_size
 
                 if cell == 0:
-                    self.walls.add(Wall(normalized_x, normalized_y))
-                elif cell == 1:
                     self.floors.add(Floor(normalized_x, normalized_y))
+                elif cell == 1:
+                    self.walls.add(Wall(normalized_x, normalized_y))
                 elif cell == 2:
                     self.traps.add(Trap(normalized_x, normalized_y))
                 elif cell == 3:
@@ -40,8 +40,8 @@ class Lab:
                     self.floors.add(Floor(normalized_x, normalized_y))
 
         self.all_sprites.add(
-            self.walls,
             self.floors,
+            self.walls,
             self.traps,
             self.cheeses,
             self.rat
