@@ -1,12 +1,16 @@
 import pygame
 from lab import Lab
+from game_loop import GameLoop
+from event_queue import EventQueue
+from renderer import Renderer
+from clock import Clock
 
 LAB_MAP =   [[1, 1, 1, 1, 1],
              [1, 0, 0, 0, 1],
              [1, 3, 2, 4, 1],
              [1, 1, 1, 1, 1]]
 
-CELL_SIZE = 50
+CELL_SIZE = 25
 
 
 def main():
@@ -20,12 +24,14 @@ def main():
     pygame.display.set_caption("LabRat")
 
     lab = Lab(LAB_MAP, CELL_SIZE)
+    event_queue = EventQueue()
+    renderer = Renderer(display, lab)
+    clock = Clock()
+    game_loop = GameLoop(lab, renderer, event_queue, clock, CELL_SIZE)
 
     # alustetaan Pygamen moduulit
     pygame.init()
-
-    # piirretään all_sprites ryhmän spritet ikkunaan
-    lab.all_sprites.draw(display)
+    game_loop.start()
 
 if __name__ == "__main__":
     main()

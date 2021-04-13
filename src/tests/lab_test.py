@@ -21,3 +21,14 @@ class TestLab(unittest.TestCase):
         rat = self.lab_1.rat
 
         self.assert_coordinates_equal(rat, 3 * CELL_SIZE, 2 * CELL_SIZE)
+
+    def test_can_move_in_floor(self):
+        rat = self.lab_1.rat
+
+        self.assert_coordinates_equal(rat, 3 * CELL_SIZE, 2 * CELL_SIZE)
+
+        self.lab_1.move_rat(dy=-CELL_SIZE)
+        self.assert_coordinates_equal(rat, 3 * CELL_SIZE, CELL_SIZE)
+
+        self.lab_1.move_rat(dx=-CELL_SIZE)
+        self.assert_coordinates_equal(rat, 2 * CELL_SIZE, CELL_SIZE)

@@ -46,3 +46,22 @@ class Lab:
             self.cheeses,
             self.rat
         )
+
+    def move_rat(self, dx=0, dy=0):
+        if not self._rat_can_move(dx, dy):
+            return
+
+        self.rat.rect.move_ip(dx, dy)
+
+    def _rat_can_move(self, dx=0, dy=0):
+        self.rat.rect.move_ip(dx, dy)
+        colliding_walls = pygame.sprite.spritecollide(self.rat, self.walls, False)
+        can_move = not colliding_walls
+        self.rat.rect.move_ip(-dx, -dy)
+
+        return can_move
+
+    def rat_got_cheese(self, dx=0,dy=0):
+        if pygame.sprite.spritecollide(self.rat, self.cheeses, False):
+            return True
+        return False
