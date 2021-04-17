@@ -61,7 +61,12 @@ class Lab:
 
         return can_move
 
-    def rat_got_cheese(self, dx=0,dy=0):
+    def rat_got_cheese(self, dx=0, dy=0):
         if pygame.sprite.spritecollide(self.rat, self.cheeses, False):
+            return True
+        return False
+
+    def rat_hit_trap(self, dx=0, dy=0):
+        if pygame.sprite.spritecollide(self.rat, self.traps, False):
             return True
         return False
