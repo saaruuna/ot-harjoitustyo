@@ -6,9 +6,9 @@
 
 /laskarit/viikko2/unicafe/htmlcov
 
-/src/__pycache__
+__pycache__
 
-/src/tests/__pycache__
+.pytest-cache
 
 .coverage
 
