@@ -21,11 +21,11 @@ class Lab:
         height = len(lab_map)
         width = len(lab_map[0])
 
-        for y in range(height):
-            for x in range(width):
-                cell = lab_map[y][x]
-                normalized_x = x * self.cell_size
-                normalized_y = y * self.cell_size
+        for y_position in range(height):
+            for x_position in range(width):
+                cell = lab_map[y_position][x_position]
+                normalized_x = x_position * self.cell_size
+                normalized_y = y_position * self.cell_size
 
                 if cell == 0:
                     self.floors.add(Floor(normalized_x, normalized_y))
@@ -47,26 +47,26 @@ class Lab:
             self.rat
         )
 
-    def move_rat(self, dx=0, dy=0):
-        if not self._rat_can_move(dx, dy):
+    def move_rat(self, x_change=0, y_change=0):
+        if not self._rat_can_move(x_change, y_change):
             return
 
-        self.rat.rect.move_ip(dx, dy)
+        self.rat.rect.move_ip(x_change, y_change)
 
-    def _rat_can_move(self, dx=0, dy=0):
-        self.rat.rect.move_ip(dx, dy)
+    def _rat_can_move(self, x_change=0, y_change=0):
+        self.rat.rect.move_ip(x_change, y_change)
         colliding_walls = pygame.sprite.spritecollide(self.rat, self.walls, False)
         can_move = not colliding_walls
-        self.rat.rect.move_ip(-dx, -dy)
+        self.rat.rect.move_ip(-x_change, -y_change)
 
         return can_move
 
-    def rat_got_cheese(self, dx=0, dy=0):
+    def rat_got_cheese(self):
         if pygame.sprite.spritecollide(self.rat, self.cheeses, False):
             return True
         return False
 
-    def rat_hit_trap(self, dx=0, dy=0):
+    def rat_hit_trap(self):
         if pygame.sprite.spritecollide(self.rat, self.traps, False):
             return True
         return False

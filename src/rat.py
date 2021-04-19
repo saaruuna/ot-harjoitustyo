@@ -3,7 +3,7 @@ from load_image import load_image
 
 
 class Rat(pygame.sprite.Sprite):
-    def __init__(self, x=0, y=0, is_dead=False, is_happy=False):
+    def __init__(self, x_position=0, y_position=0, is_dead=False, is_happy=False):
         super().__init__()
 
         self.is_dead = is_dead
@@ -13,8 +13,8 @@ class Rat(pygame.sprite.Sprite):
 
         self.image = self._images["rat"]
         self.rect = self.image.get_rect()
-        self.rect.x = x
-        self.rect.y = y
+        self.rect.x = x_position
+        self.rect.y = y_position
 
     def update(self):
         if self.is_dead:
@@ -22,7 +22,6 @@ class Rat(pygame.sprite.Sprite):
         else:
             self.image = self._images["rat"]
 
-    def update(self):
         if self.is_happy:
             self.image = self._images["happy_rat"]
         else:
