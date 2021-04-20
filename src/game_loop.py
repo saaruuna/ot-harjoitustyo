@@ -2,12 +2,12 @@ import sys
 import pygame
 
 class GameLoop:
-    def __init__(self, lab, renderer, event_queue, clock, cell_size):
+    def __init__(self, lab, renderer, event_queue, clock, SCALE):
         self._lab = lab
         self._renderer = renderer
         self._event_queue = event_queue
         self._clock = clock
-        self._cell_size = cell_size
+        self._SCALE = SCALE
 
     def start(self):
         while True:
@@ -31,13 +31,13 @@ class GameLoop:
         for event in pygame.event.get():
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_LEFT:
-                    self._lab.move_rat(x_change=-self._cell_size)
+                    self._lab.move_rat(x_change=-self._SCALE)
                 if event.key == pygame.K_RIGHT:
-                    self._lab.move_rat(x_change=self._cell_size)
+                    self._lab.move_rat(x_change=self._SCALE)
                 if event.key == pygame.K_UP:
-                    self._lab.move_rat(y_change=-self._cell_size)
+                    self._lab.move_rat(y_change=-self._SCALE)
                 if event.key == pygame.K_DOWN:
-                    self._lab.move_rat(y_change=self._cell_size)
+                    self._lab.move_rat(y_change=self._SCALE)
 
                 if event.key == pygame.K_ESCAPE:
                     sys.exit()

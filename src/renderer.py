@@ -19,7 +19,8 @@ class Renderer:
         title = self._font.render("Welcome to LabRat!", True, (255, 0, 0))
         self._display.blit(title, (0, 0))
 
-        title = self._font.render("You are solving the lab " + str(self._lab.name), True, (255, 0, 0))
+        title = self._font.render("You are solving the lab "
+        + str(self._lab.name), True, (255, 0, 0))
         self._display.blit(title, (0, 20))
 
         quit = self._font.render("Press Esc to quit.", True, (255, 0, 0))

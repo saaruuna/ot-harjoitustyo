@@ -1,9 +1,9 @@
 import pygame
-from rat import Rat
-from wall import Wall
-from trap import Trap
-from floor import Floor
-from cheese import Cheese
+from components.rat import Rat
+from components.wall import Wall
+from components.trap import Trap
+from components.floor import Floor
+from components.cheese import Cheese
 
 class Lab:
     def __init__(self, name, lab_map, cell_size):
@@ -65,14 +65,10 @@ class Lab:
 
     def rat_got_cheese(self):
         if pygame.sprite.spritecollide(self.rat, self.cheeses, False):
-            self.rat.is_happy = True
-            self.rat.update()
             return True
         return False
 
     def rat_hit_trap(self):
         if pygame.sprite.spritecollide(self.rat, self.traps, False):
-            self.rat.is_dead = True
-            self.rat.update()
             return True
         return False
