@@ -6,7 +6,9 @@ from floor import Floor
 from cheese import Cheese
 
 class Lab:
-    def __init__(self, lab_map, cell_size):
+    def __init__(self, name, lab_map, cell_size):
+        self.name = name
+        self.lab_map = lab_map
         self.cell_size = cell_size
         self.rat = None
         self.floors = pygame.sprite.Group()
@@ -63,10 +65,14 @@ class Lab:
 
     def rat_got_cheese(self):
         if pygame.sprite.spritecollide(self.rat, self.cheeses, False):
+            self.rat.is_happy = True
+            self.rat.update()
             return True
         return False
 
     def rat_hit_trap(self):
         if pygame.sprite.spritecollide(self.rat, self.traps, False):
+            self.rat.is_dead = True
+            self.rat.update()
             return True
         return False
