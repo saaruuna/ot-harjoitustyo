@@ -1,9 +1,9 @@
 import pygame
-from event_queue import EventQueue
-from clock import Clock
-from lab import Lab
-from game_loop import GameLoop
-from renderer import Renderer
+from ui.lab import Lab
+from ui.game_loop import GameLoop
+from ui.renderer import Renderer
+from ui.event_queue import EventQueue
+from ui.clock import Clock
 
 
 LAB_MAP =   [[1, 1, 1, 1, 1],
