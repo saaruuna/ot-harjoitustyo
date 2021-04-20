@@ -33,4 +33,13 @@ class TestLab(unittest.TestCase):
         self.lab.move_rat(x_change=-SCALE)
         self.assert_coordinates_equal(rat, 2 * SCALE, SCALE)
 
-    
+    def test_cannot_move_through_walls(self):
+        rat = self.lab.rat
+
+        self.assert_coordinates_equal(rat, 3 * SCALE, 2 * SCALE)
+
+        self.lab.move_rat(x_change=SCALE)
+        self.assert_coordinates_equal(rat, 3 * SCALE, 2 * SCALE)
+
+        self.lab.move_rat(y_change=SCALE)
+        self.assert_coordinates_equal(rat, 3 * SCALE, 2 * SCALE)
