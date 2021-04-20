@@ -21,6 +21,8 @@ Projektin testit voi suorittaa komennolla `<poetry run invoke test>` tai `<pytho
 
 [Työaikakirjanpito](https://github.com/saaruuna/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)
 
+[Arkkitehtuurikuvaus](https://github.com/saaruuna/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
+
 ## TODO
 
 * pelin toiminnallisuus kuntoon: GAME OVER ja YOU WIN -näkymät
