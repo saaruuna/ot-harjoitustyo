@@ -1,5 +1,5 @@
 import unittest
-from lab import Lab
+from ui.lab import Lab
 
 LAB_MAP =     [[1, 1, 1, 1, 1],
                [1, 0, 0, 0, 1],
