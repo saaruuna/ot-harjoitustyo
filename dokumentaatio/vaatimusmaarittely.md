@@ -1,12 +1,12 @@
 # Vaatimusmäärittely
 
-##Toiminnallisuudet
+## Toiminnallisuudet
 
 Viikolla 5 lisätty:
 * Main Menu -valikko
 * Game Over -valikko
 * navigointi Main Menu -valikosta peliin, pelistä Game Over -valikkoon ja takaisin alkuun
-* (ei näy käyttäjälle) labyrinttitietokannan alustus 
+* (ei näy käyttäjälle) labyrinttitietokannan alustus
 
 ## Sovelluksen tarkoitus
 
@@ -24,7 +24,7 @@ Sovelluksessa ei ole kirjautumismahdollisuutta. Labyrinttejä luodaan ja selvite
 
 ## Käyttöliittymäluonnos
 
-![LabRat-käyttöliittymäluonnos](kuvat/LabRat-kayttis.jpg)
+![LabRat-käyttöliittymäluonnos](kuvat/LabRat_kayttis.jpg)
 
 ## Käyttökokemus
 
