@@ -22,17 +22,17 @@ class Game:
         while self.playing:
             self.play()
 
+        self.lab.reset_lab()
+
     def play(self):
         if self.lab.rat_got_cheese():
             self.game_over_menu.status = "You win :)"
             self.curr_menu = self.game_over_menu
-            self.lab.reset_lab()
             self.playing = False
 
         if self.lab.rat_hit_trap():
             self.game_over_menu.status = "You lose :("
             self.curr_menu = self.game_over_menu
-            self.lab.reset_lab()
             self.playing = False
 
         self.game_loop.handle_events()

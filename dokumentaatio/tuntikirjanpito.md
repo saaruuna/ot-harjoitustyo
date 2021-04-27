@@ -9,6 +9,8 @@
 | 17.4. | 5              | selvittelyä siitä, kuinka tehdä käyttöliittymää pygamella      |
 | 19.4. | 7              | pylintin käyttöönotto ja testauksen laajentaminen              |
 | 20.4. | 9              | selvittelyä tietokannan ja gameloop-testien käyttöönotosta     |
+| 26.4. | 7              | koodin refaktorointia, menu-toiminnallisuutta ja tietokanta    |
+| 28.4  | 7              | menu-toiminnallisuutta ja testauksen edistämistä               |
 
 
-Tunteja yhteensä: 26                 |
+Tunteja yhteensä: 50             

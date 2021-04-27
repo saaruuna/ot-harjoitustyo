@@ -1,10 +1,17 @@
 # Vaatimusmäärittely
 
+##Toiminnallisuudet
+
+Viikolla 5 lisätty:
+* Main Menu -valikko
+* Game Over -valikko
+* navigointi Main Menu -valikosta peliin, pelistä Game Over -valikkoon ja takaisin alkuun
+* (ei näy käyttäjälle) labyrinttitietokannan alustus 
+
 ## Sovelluksen tarkoitus
 
 Sovellus on 2D- peli nimeltä LabRat. Pelihahmo on rotta, jota ohjataan labyrintin sisällä olevaa juustoa kohti. Pelin voittaa, kun rotta saa juuston. Pelin häviää, jos astuu rotanloukkuun. Pelaajan on mahdollista selvittää labyrinttejä. Tämän lisäksi pelaaja voi luoda ja tallentaa labyrinttejä tietokantaan muiden pelaajien selvitettäväksi.
-
-Pelissä on seuraavat objektit:
+mPelissä on seuraavat objektit:
 * Rotta
 * Seinä
 * Lattia
@@ -17,7 +24,7 @@ Sovelluksessa ei ole kirjautumismahdollisuutta. Labyrinttejä luodaan ja selvite
 
 ## Käyttöliittymäluonnos
 
-![LabRat-käyttöliittymäluonnos](dokumentaatio/kuvat/LabRat-kayttis.jpg)
+![LabRat-käyttöliittymäluonnos](kuvat/LabRat-kayttis.jpg)
 
 ## Käyttökokemus
 
