@@ -11,7 +11,7 @@ SCALE = 20
 
 class TestLab(unittest.TestCase):
     def setUp(self):
-        self.lab = Lab("TEST", LAB_MAP, SCALE)
+        self.lab = Lab("TEST", LAB_MAP)
 
     def assert_coordinates_equal(self, sprite, x_position, y_position):
         self.assertEqual(sprite.rect.x, x_position)

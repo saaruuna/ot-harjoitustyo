@@ -1,49 +1,63 @@
 import pygame
 
+SCALE = 20
 
 class Renderer:
-    def __init__(self, display, lab):
+    def __init__(self, game):
         pygame.init()
+        self.game = game
+        self.display_width, self.display_height = 480, 270
+        self.display = pygame.Surface((self.display_width, self.display_height))
+        self.window = pygame.display.set_mode((self.display_width, self.display_height))
+        #self.font_name = '8-BIT WONDER.TTF'
+        self.font = pygame.font.SysFont('arialrounded', 20)
+        self.black, self.white = (0, 0, 0), (255, 255, 255)
 
-        self._display = display
-        self._lab = lab
-        self._font = pygame.font.SysFont('arialrounded', 24)
-        self.rat_got_cheese = False
-        self.rat_hit_trap = False
+    def render_lab(self, lab):
+        self.display.fill(self.black)
 
-    def render(self):
-        self._display.fill((0, 0, 0))
+        self.draw_text("You are solving the lab " + lab.name, 20, self.display_width / 2, 20)
 
-        display_width, display_height = pygame.display.get_window_size()
-
-        title = self._font.render("Welcome to LabRat!", True, (255, 0, 0))
-        self._display.blit(title, (0, 0))
-
-        title = self._font.render("You are solving the lab "
-        + str(self._lab.name), True, (255, 0, 0))
-        self._display.blit(title, (0, 20))
-
-        quit = self._font.render("Press Esc to quit.", True, (255, 0, 0))
-        self._display.blit(quit, (0, 40))
-
-        surface_width = self._lab.cell_size * len(self._lab.lab_map)
-        surface_height = self._lab.cell_size * len(self._lab.lab_map[0])
+        surface_width = SCALE * len(lab.lab_map)
+        surface_height = SCALE * len(lab.lab_map[0])
         surface = pygame.Surface((surface_width, surface_height))
 
         surface_center = (
-        (display_width - surface_width) / 2,
-        (display_height - surface_height) / 2,
+        (self.display_width - surface_width) / 2,
+        (self.display_height - surface_height) / 2,
         )
 
-        self._lab.all_sprites.draw(surface)
-        self._display.blit(surface, surface_center)
+        lab.all_sprites.draw(surface)
+        self.display.blit(surface, surface_center)
 
-        if self.rat_got_cheese:
-            youwin = self._font.render("You win!", True, (255, 0, 0))
-            self._display.blit(youwin, (0, 400))
+        self.blit_screen()
 
-        if self.rat_hit_trap:
-            youlose = self._font.render("You lose...", True, (255, 0, 0))
-            self._display.blit(youlose, (0, 400))
+    def render_game_over_menu(self, replayx, replayy, quitx, quity, status):
+        self.display.fill(self.black)
 
-        pygame.display.flip()
+        self.draw_text(status, 20, self.display_width / 2, 40)
+
+        self.draw_text("PLAY AGAIN", 20, replayx, replayy)
+        self.draw_text("QUIT", 20, quitx, quity)
+
+    def render_main_menu(self, solvex, solvey, createx, createy):
+        self.display.fill(self.black)
+        self.draw_text("Welcome to LabRat!", 20, self.display_width / 2,
+        self.display_height / 2 - 20)
+        self.draw_text("SOLVE MAZE", 20, solvex, solvey)
+        self.draw_text("CREATE MAZE", 20, createx, createy)
+
+    def draw_text(self, text, size, x_position, y_position):
+        #font = pygame.font.Font(self.font_name,size)
+        text_surface = self.font.render(text, True, self.white)
+        text_rect = text_surface.get_rect()
+        text_rect.center = (x_position, y_position)
+        self.display.blit(text_surface, text_rect)
+
+    def draw_cursor(self, x_position, y_position):
+        self.draw_text("*", 15, x_position, y_position)
+
+    def blit_screen(self):
+        self.window.blit(self.display, (0, 0))
+        pygame.display.update()
+        self.game.game_loop.reset_keys()

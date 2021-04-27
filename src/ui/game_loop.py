@@ -1,64 +1,35 @@
 import pygame
+from ui.event_queue import EventQueue
 
 class GameLoop:
-    def __init__(self, lab, renderer, event_queue, clock, SCALE):
-        self._lab = lab
-        self._renderer = renderer
-        self._event_queue = event_queue
-        self._clock = clock
-        self._scale = SCALE
+    def __init__(self):
+        pygame.init()
+        self.event_queue = EventQueue()
+        self.up_key, self.down_key, self.right_key = False, False, False
+        self.left_key, self.start_key, self.back_key = False, False, False
+        self.quit_key = False
 
-    def start(self):
-        while True:
-            if self._handle_events() is False:
-                break
-
-            if self._lab.rat_got_cheese():
-                self._renderer.rat_got_cheese = True
-                break
-
-            if self._lab.rat_hit_trap():
-                self._renderer.rat_hit_trap = True
-                break
-
-            self._render()
-
-            self._clock.tick(60)
-
-        self._show_game_over()
-
-    def _handle_events(self):
+    def handle_events(self):
         for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                self.quit_key = True
             if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_RETURN:
+                    self.start_key = True
+                if event.key == pygame.K_BACKSPACE:
+                    self.back_key = True
                 if event.key == pygame.K_LEFT:
-                    self._lab.move_rat(x_change=-self._scale)
+                    self.left_key = True
                 if event.key == pygame.K_RIGHT:
-                    self._lab.move_rat(x_change=self._scale)
+                    self.right_key = True
                 if event.key == pygame.K_UP:
-                    self._lab.move_rat(y_change=-self._scale)
+                    self.up_key = True
                 if event.key == pygame.K_DOWN:
-                    self._lab.move_rat(y_change=self._scale)
-
+                    self.down_key = True
                 if event.key == pygame.K_ESCAPE:
-                    return False
-            elif event.type == pygame.QUIT:
-                return False
+                    self.quit_key = True
 
-    def _handle_events_game_over(self):
-        for event in pygame.event.get():
-            if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_ESCAPE:
-                    return False
-            elif event.type == pygame.QUIT:
-                return False
-
-
-    def _show_game_over(self):
-        while True:
-            if self._handle_events_game_over() is False:
-                break
-
-            self._render()
-
-    def _render(self):
-        self._renderer.render()
+    def reset_keys(self):
+        self.up_key, self.down_key, self.right_key = False, False, False
+        self.left_key, self.start_key, self.back_key = False, False, False
+        self.quit_key = False
