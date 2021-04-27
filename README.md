@@ -25,6 +25,4 @@ Projektin testit voi suorittaa komennolla `<poetry run invoke test>` tai `<pytho
 
 ## TODO
 
-* pelin toiminnallisuus kuntoon: GAME OVER ja YOU WIN -näkymät
-* graafinen käyttöliittymä, jossa useampi ikkuna
-* mahdollisuus luoda ja tallentaa labyrintteja tietokantaan
+* käyttöliittymään mahdollisuus luoda ja tallentaa labyrintteja tietokantaan
