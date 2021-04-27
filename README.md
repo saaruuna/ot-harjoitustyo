@@ -8,8 +8,7 @@ Tällä hetkellä koossa on pelin runko, tietokanta ja hieman käyttöliittymä�
 
 1. Asenna riippuvuudet komennolla `<poetry install>`.
 2. Käynnistä peli komennolla `<poetry run invoke start>` tai `<python3 -m poetry run invoke start>`.
-3. Liikuttele rottaa labyrintissa nuolinäppäimillä.  
-4. Peli loppuu, kun rotta saa juuston.
+3. Voit navigoida sovelluksessa nuolinäppäimillä.
 
 ## Testien suorittaminen
 
