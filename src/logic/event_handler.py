@@ -1,7 +1,7 @@
 import pygame
-from ui.event_queue import EventQueue
+from logic.event_queue import EventQueue
 
-class GameLoop:
+class EventHandler:
     def __init__(self):
         pygame.init()
         self.event_queue = EventQueue()

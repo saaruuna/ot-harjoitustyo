@@ -18,9 +18,9 @@ class Lab:
         self.cheeses = pygame.sprite.Group()
         self.all_sprites = pygame.sprite.Group()
 
-        self.initialize_sprites(lab_map)
+        self._initialize_sprites(lab_map)
 
-    def initialize_sprites(self, lab_map):
+    def _initialize_sprites(self, lab_map):
         height = len(lab_map)
         width = len(lab_map[0])
 
@@ -59,7 +59,14 @@ class Lab:
     def rat_can_move(self, x_change=0, y_change=0):
         self.rat.rect.move_ip(x_change, y_change)
         colliding_walls = pygame.sprite.spritecollide(self.rat, self.walls, False)
-        can_move = not colliding_walls
+        out_of_bounds = False
+
+        if (self.rat.rect.x < 0 or self.rat.rect.x >= (len(self.lab_map[0])*SCALE)):
+            out_of_bounds = True
+        if (self.rat.rect.y < 0 or self.rat.rect.y >= (len(self.lab_map)*SCALE)):
+            out_of_bounds = True
+
+        can_move = not colliding_walls and not out_of_bounds
         self.rat.rect.move_ip(-x_change, -y_change)
 
         return can_move
@@ -75,4 +82,4 @@ class Lab:
         return False
 
     def reset_lab(self):
-        self.initialize_sprites(self.lab_map)
+        self._initialize_sprites(self.lab_map)

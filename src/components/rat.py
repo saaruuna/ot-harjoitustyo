@@ -6,14 +6,7 @@ class Rat(pygame.sprite.Sprite):
     def __init__(self, x_position=0, y_position=0):
         super().__init__()
 
-        self._images = self._load_images()
-
-        self.image = self._images["rat"]
+        self.image = load_image("rat.png")
         self.rect = self.image.get_rect()
         self.rect.x = x_position
         self.rect.y = y_position
-
-    def _load_images(self):
-        return {
-            "rat": load_image("rat.png")
-        }

@@ -1,4 +1,4 @@
-from ui.lab import Lab
+from logic.lab import Lab
 from database_connection import get_database_connection
 
 def get_lab_by_row(row):

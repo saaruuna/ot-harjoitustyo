@@ -11,6 +11,7 @@
 | 20.4. | 9              | selvittelyä tietokannan ja gameloop-testien käyttöönotosta     |
 | 26.4. | 7              | koodin refaktorointia, menu-toiminnallisuutta ja tietokanta    |
 | 28.4  | 7              | menu-toiminnallisuutta ja testauksen edistämistä               |
+| 3.5.  | 6              | labyrinttivalikko kuntoon, refaktorointia                      |
 
 
-Tunteja yhteensä: 50             
+Tunteja yhteensä: 56             
