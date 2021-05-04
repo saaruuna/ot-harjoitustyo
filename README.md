@@ -1,8 +1,10 @@
 # LabRat-pelisovellus
 
+Linkki uusimpaan releaseen:
+
 LabRat on 2D-pelisovellus. Pelihahmona on rotta, jota ohjataan labyrintissa juustoa kohti ja vältellään rotanloukkuja. Käyttäjä voi selvittää labyrinttejä sekä tallentaa suunnittelemiaan labyrintteja pelin tietokantaan muiden pelaajien selvitettäväksi.
 
-Tällä hetkellä koossa on pelin runko, tietokanta ja hieman käyttöliittymää. Pelin voi käynnistää, ja alkuvalikosta voi valita yhden labyrintin pelattavaksi. Rottaa voi liikuttaa lattialla, juuston saadessaan voi voittaa pelin ja osuessa rotanloukkuun hävitä. Tämän jälkeen voi sulkea sovelluksen tai navigoida alkuun. Tehtävänä on vielä labyrinttivalikko ja käyttöliittymä labyrinttien suunnittelemiseen.
+Tällä hetkellä koossa on pelin runko, tietokanta ja hieman käyttöliittymää. Pelin voi käynnistää, ja alkuvalikosta voi siirtyä labyrinttivalikkoon. Valikosta voi valita, minkä nimisen labyrintin haluaa pelata, minkä jälkeen siirrytään pelaamaan. Rottaa voi liikuttaa lattialla, juuston saadessaan voi voittaa pelin ja osuessa rotanloukkuun hävitä. Tämän jälkeen voi sulkea sovelluksen tai navigoida alkuun. Tehtävänä on vielä käyttöliittymä labyrinttien suunnittelemiseen.
 
 ## Käyttöohjeet
 

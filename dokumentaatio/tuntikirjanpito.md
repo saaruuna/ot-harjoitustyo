@@ -12,6 +12,7 @@
 | 26.4. | 7              | koodin refaktorointia, menu-toiminnallisuutta ja tietokanta    |
 | 28.4  | 7              | menu-toiminnallisuutta ja testauksen edistämistä               |
 | 3.5.  | 6              | labyrinttivalikko kuntoon, refaktorointia                      |
+| 4.5.  | 3              | docstringien lisäämistä, testauksen laajentamista              |
 
 
-Tunteja yhteensä: 56             
+Tunteja yhteensä: 59             
