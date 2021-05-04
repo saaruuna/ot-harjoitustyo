@@ -8,7 +8,28 @@ from components.cheese import Cheese
 SCALE = 20
 
 class Lab:
+    """A class describe a Lab object.
+
+    Attributes:
+        name: The name of the Lab.
+        lab_map: The array of an array of integers which describe the layout of the lab.
+        rat: The Rat object.
+        floors: The group of Floor objects.
+        walls: The group of Wall objects.
+        traps: The group of Trap objects.
+        cheeses: The group of Cheese objects.
+        all_sprites: The group of all pygame sprites.
+    """
+
     def __init__(self, name, lab_map):
+        """The class contructor, which creates a new Lab object.
+
+        Args:
+            name: The name of the Lab object fetched from the lab database.
+            lab_map: The array of arrays of integers which describe the layout of the Lab,
+                        fetched from the lab database.
+        """
+
         self.name = name
         self.lab_map = lab_map
         self.rat = None
@@ -21,6 +42,13 @@ class Lab:
         self._initialize_sprites(lab_map)
 
     def _initialize_sprites(self, lab_map):
+        """The method to read the given map and initialize sprites in the game.
+
+        Args:
+            lab_map: The array of arrays of integers which describe the layout of the Lab,
+                        fetched from the lab database.
+        """
+
         height = len(lab_map)
         width = len(lab_map[0])
 
@@ -51,12 +79,30 @@ class Lab:
         )
 
     def move_rat(self, x_change=0, y_change=0):
+        """The method to move the Rat sprite in the game.
+
+        Args:
+            x_change: The change in x-position input by the player.
+            y_change: The change in y-position input by the player.
+        """
+
         if not self.rat_can_move(x_change, y_change):
             return
 
         self.rat.rect.move_ip(x_change, y_change)
 
     def rat_can_move(self, x_change=0, y_change=0):
+        """The method to check whether the player's input to move the rat is allowed.
+
+        Args:
+            x_change: The change in x-position input by the player.
+            y_change: The change in y-position input by the player.
+
+        Returns:
+            True, if the input move is allowed i.e. rat is in bounds and not moving through a wall.
+            False, if the input move is not allowed i.e. a wall is in the way or the rat is out of bounds.
+        """
+
         self.rat.rect.move_ip(x_change, y_change)
         colliding_walls = pygame.sprite.spritecollide(self.rat, self.walls, False)
         out_of_bounds = False
@@ -72,14 +118,30 @@ class Lab:
         return can_move
 
     def rat_got_cheese(self):
+        """The method to check whether the player has won by getting the cheese with the rat.
+
+        Returns:
+            True, if the rat has collided with a cheese.
+            False, if the rat has not collided with a cheese.
+        """
+
         if pygame.sprite.spritecollide(self.rat, self.cheeses, False):
             return True
         return False
 
     def rat_hit_trap(self):
+        """The method to check whether the player has lost by hitting a trap with the rat.
+
+        Returns:
+            True, if the rat has collided with a trap.
+            False, if the rat has not collided with a trap.
+        """
+
         if pygame.sprite.spritecollide(self.rat, self.traps, False):
             return True
         return False
 
     def reset_lab(self):
+        """The method to reset a lab to its initial position defined by the lab map.
+        """
         self._initialize_sprites(self.lab_map)

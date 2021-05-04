@@ -1,7 +1,7 @@
 import unittest
 from initialize_database import initialize_database
 from repositories.lab_repository import lab_repository
-from ui.lab import Lab
+from logic.lab import Lab
 
 LAB_MAP1 =     [[1, 1, 1, 1, 1],
                [1, 0, 0, 0, 1],
@@ -24,7 +24,7 @@ class TestLabRepository(unittest.TestCase):
     def test_initilization(self):
         labs = lab_repository.find_all()
 
-        self.assertEqual(len(labs), 2)
+        self.assertEqual(len(labs), 5)
         self.assertEqual(labs[0].name, self.lab1.name)
         self.assertEqual(labs[1].name, self.lab2.name)
         self.assertEqual(labs[0].lab_map, self.lab1.lab_map)
