@@ -1,6 +1,6 @@
 # LabRat-pelisovellus
 
-Linkki uusimpaan releaseen:
+Linkki uusimpaan releaseen: [Viikon 6 release](https://github.com/saaruuna/ot-harjoitustyo/releases/tag/viikko6)
 
 LabRat on 2D-pelisovellus. Pelihahmona on rotta, jota ohjataan labyrintissa juustoa kohti ja vältellään rotanloukkuja. Käyttäjä voi selvittää labyrinttejä sekä tallentaa suunnittelemiaan labyrintteja pelin tietokantaan muiden pelaajien selvitettäväksi.
 
