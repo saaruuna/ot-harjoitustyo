@@ -1,4 +1,3 @@
-import pygame
 from ui.menu import Menu
 
 class MainMenu(Menu):
@@ -8,7 +7,7 @@ class MainMenu(Menu):
 
     Attributes inherited from superclass:
         game: The game which the menu is connected to.
-        run_display: A boolean value which controls whther a menu should be displayed or not.
+        run_display: A boolean value which controls whether a menu should be displayed or not.
         event_handler: The EventHandler object attached to the game to handle input from the player.
         renderer: The Renderer object attached to the game which renders different menus.
         cursor_rect: The cursor shape to be displayed in the menu.
@@ -26,7 +25,8 @@ class MainMenu(Menu):
         """The class contructor, which creates a new Main Menu.
 
         Args:
-            game: The game which the menu is attached to. This is passed to the constructor of the Menu superclass.
+            game: The game which the menu is attached to. This is passed to the
+            constructor of the Menu superclass.
         """
 
         Menu.__init__(self, game)
@@ -83,4 +83,5 @@ class MainMenu(Menu):
                 self.game.curr_menu = self.game.lab_selection_menu
                 self.run_display = False
             if self.state == "Create":
+                self.game.curr_menu = self.game.lab_size_menu
                 self.run_display = False

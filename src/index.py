@@ -1,12 +1,10 @@
-from repositories.lab_repository import lab_repository
 from initialize_database import initialize_database
 from logic.game import Game
 
 def main():
     initialize_database()
-    labs = lab_repository.find_all()
 
-    game = Game(labs)
+    game = Game()
 
     while game.running:
         game.curr_menu.display_menu()

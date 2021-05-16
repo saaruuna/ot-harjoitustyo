@@ -1,5 +1,4 @@
 import pygame
-from repositories import lab_repository
 
 class Menu:
     """A superclass which creates common attributes of different menus to inherit.

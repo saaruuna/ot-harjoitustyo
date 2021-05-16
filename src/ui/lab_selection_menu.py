@@ -1,4 +1,3 @@
-import pygame
 from ui.menu import Menu
 
 class LabSelectionMenu(Menu):
@@ -31,7 +30,8 @@ class LabSelectionMenu(Menu):
         """The class contructor, which creates a new Main Menu.
 
         Args:
-            game: The game which the menu is attached to. This is passed to the constructor of the Menu superclass.
+            game: The game which the menu is attached to. This is passed to the
+            constructor of the Menu superclass.
         """
 
         Menu.__init__(self, game)
@@ -50,8 +50,17 @@ class LabSelectionMenu(Menu):
         self.thirdx, self.thirdy = mid_width, mid_height + 60
         self.cursor_rect.midtop = (self.firstx + self.offset, self.firsty)
 
+    def update_lab_selection_menu(self):
+        self.lab_selection = []
+
+        j = 0
+        while j < len(self.game.labs):
+            self.lab_selection.append(self.game.labs[j:j+3])
+            j += 3
+
     def display_menu(self):
-        """Displays the Lab Selection Menu to the player until the player navigates to a different menu.
+        """Displays the Lab Selection Menu to the player until the player navigates
+            to a different menu.
         """
 
         self.page = 0
@@ -66,34 +75,35 @@ class LabSelectionMenu(Menu):
             self.renderer.blit_screen()
 
     def _move_cursor(self):
-        """Displays the cursor to the player as it moves across different options on the Lab Selection Menu.
-            The attribute state is used to track where the cursor is.
+        """Displays the cursor to the player as it moves across different options
+            on the Lab Selection Menu. The attribute state is used to track where
+            the cursor is.
         """
 
         if self.event_handler.down_key:
             if self.state == "0":
-                if (len(self.lab_selection[self.page]) > 1):
+                if len(self.lab_selection[self.page]) > 1:
                     self.cursor_rect.midtop = (self.secondx + self.offset, self.secondy)
                     self.state = "1"
             elif self.state == "1":
-                if (len(self.lab_selection[self.page]) > 2):
+                if len(self.lab_selection[self.page]) > 2:
                     self.cursor_rect.midtop = (self.thirdx + self.offset, self.thirdy)
                     self.state = "2"
             elif self.state == "2":
-                if (len(self.lab_selection[self.page]) > 2):
+                if len(self.lab_selection[self.page]) > 2:
                     self.cursor_rect.midtop = (self.firstx + self.offset, self.firsty)
                     self.state = "0"
         elif self.event_handler.up_key:
             if self.state == "0":
-                if (len(self.lab_selection[self.page]) > 2):
+                if len(self.lab_selection[self.page]) > 2:
                     self.cursor_rect.midtop = (self.thirdx + self.offset, self.thirdy)
                     self.state = "2"
             elif self.state == "1":
-                if (len(self.lab_selection[self.page]) > 1):
+                if len(self.lab_selection[self.page]) > 1:
                     self.cursor_rect.midtop = (self.firstx + self.offset, self.firsty)
                     self.state = "0"
             elif self.state == "2":
-                if (len(self.lab_selection[self.page]) > 2):
+                if len(self.lab_selection[self.page]) > 2:
                     self.cursor_rect.midtop = (self.secondx + self.offset, self.secondy)
                     self.state = "1"
         elif self.game.event_handler.left_key:
@@ -129,8 +139,8 @@ class LabSelectionMenu(Menu):
                 self.game.playing = True
                 self.run_display = False
         elif self.event_handler.left_key:
-            if (self.page > 0):
+            if self.page > 0:
                 self.page -= 1
         elif self.event_handler.right_key:
-            if (self.page + 1 < len(self.lab_selection)):
+            if self.page + 1 < len(self.lab_selection):
                 self.page += 1

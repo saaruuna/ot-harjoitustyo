@@ -100,7 +100,8 @@ class Lab:
 
         Returns:
             True, if the input move is allowed i.e. rat is in bounds and not moving through a wall.
-            False, if the input move is not allowed i.e. a wall is in the way or the rat is out of bounds.
+            False, if the input move is not allowed i.e. a wall is in the way or the rat is out of
+            bounds.
         """
 
         self.rat.rect.move_ip(x_change, y_change)

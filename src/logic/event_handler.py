@@ -24,7 +24,8 @@ class EventHandler:
         self.event_queue = EventQueue()
         self.up_key, self.down_key, self.right_key = False, False, False
         self.left_key, self.start_key, self.back_key = False, False, False
-        self.quit_key = False
+        self.quit_key, self.zero_key, self.one_key = False, False, False
+        self.two_key, self.three_key, self.four_key = False, False, False
 
     def handle_events(self):
         """The method to set the value of a key to True when pressed.
@@ -46,6 +47,16 @@ class EventHandler:
                     self.up_key = True
                 if event.key == pygame.K_DOWN:
                     self.down_key = True
+                if event.key == pygame.K_0:
+                    self.zero_key = True
+                if event.key == pygame.K_1:
+                    self.one_key = True
+                if event.key == pygame.K_2:
+                    self.two_key = True
+                if event.key == pygame.K_3:
+                    self.three_key = True
+                if event.key == pygame.K_4:
+                    self.four_key = True
                 if event.key == pygame.K_ESCAPE:
                     self.quit_key = True
 
@@ -54,4 +65,5 @@ class EventHandler:
         """
         self.up_key, self.down_key, self.right_key = False, False, False
         self.left_key, self.start_key, self.back_key = False, False, False
-        self.quit_key = False
+        self.quit_key, self.zero_key, self.one_key = False, False, False
+        self.two_key, self.three_key, self.four_key = False, False, False
