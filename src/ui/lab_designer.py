@@ -107,12 +107,15 @@ class LabDesigner:
                 if event.type == pygame.USEREVENT:
                     if event.user_type == pygame_gui.UI_BUTTON_PRESSED:
                         if event.ui_element == place_element_button:
-                            x_coordinate = int(x_entry.get_text())
-                            y_coordinate = int(y_entry.get_text())
-                            if self._add_object_to_lab(self.mode, x_coordinate,
-                                                                y_coordinate):
-                                x_entry.set_text('0')
-                                y_entry.set_text('0')
+                            x_coordinate = x_entry.get_text()
+                            y_coordinate = y_entry.get_text()
+                            if self._coordinate_is_valid(x_coordinate):
+                                if self._coordinate_is_valid(y_coordinate):
+                                    if self._add_object_to_lab(self.mode, int(x_coordinate),
+                                                                        int(y_coordinate)):
+                                        x_entry.set_text('0')
+                                        y_entry.set_text('0')
+
                         elif event.ui_element == finished_button:
                             if self._add_finished_lab_to_repository(name_entry.get_text(),
                                                     self.lab_design.lab_map, self.size):
@@ -127,6 +130,16 @@ class LabDesigner:
             self._display_lab_design()
             self.manager.draw_ui(self.window_surface)
             pygame.display.update()
+
+    def _coordinate_is_valid(self, coordinate):
+        root = tkinter.Tk()
+        root.withdraw()
+
+        if len(coordinate) == 0:
+            messagebox.showerror("Error", "Please enter a valid coordinate!")
+            return False
+
+        return True
 
     def _display_text_components(self):
         """The method to display the text components of the lab design.
@@ -283,6 +296,9 @@ class LabDesigner:
             return False
         elif lab_design_status == "must_contain_cheese":
             messagebox.showerror("Error", "Your lab must contain at least one cheese!")
+            return False
+        elif lab_design_status == "unnamed_lab":
+            messagebox.showerror("Error", "Your lab must have a name!")
             return False
         elif lab_design_status == "lab_name_taken":
             messagebox.showerror("Error", "This lab name is taken! Choose a different name.")

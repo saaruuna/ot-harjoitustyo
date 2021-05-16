@@ -97,10 +97,11 @@ class LabRepository:
         """
 
         cursor = self._connection.cursor()
+        lab_map_string = self._generate_lab_map_string(lab_map, size)
 
         cursor.execute(
             'insert into labs (name, map, size) values (?, ?, ?)',
-            (name, lab_map, size, )
+            (name, lab_map_string, size, )
         )
 
         self._connection.commit()
@@ -132,5 +133,31 @@ class LabRepository:
                 contains_lab = True
 
         return contains_lab
+
+    def _generate_lab_map_string(self, lab_map, size):
+        """A method to generate an appropriate string to describe the lab_map
+            that can be inserted into the database.
+
+        Args:
+            lab_map: The lab_map which we want to generate a string from.
+
+        Returns:
+            string lab_map_string, which is built from the lab map.
+        """
+
+        lab_map_string = ""
+
+        i=0
+        for row in lab_map:
+            j=0
+            for element in row:
+                if i == size - 1 and j == size - 1:
+                    lab_map_string += str(element)
+                else:
+                    lab_map_string += str(element)+"#"
+                j+=1
+            i+=1
+
+        return lab_map_string
 
 lab_repository = LabRepository(get_database_connection())

@@ -60,6 +60,9 @@ class LabDesign:
             string success, if the lab design was successfully inserted into the database
         """
 
+        if len(name) == 0:
+            return "unnamed_lab"
+
         if not self._contains_rat():
             return "must_contain_rat"
 
@@ -72,8 +75,7 @@ class LabDesign:
         if lab_repository.contains_lab(name):
             return "lab_name_taken"
 
-        normalized_lab_map = self._generate_lab_map(lab_map)
-        lab_repository.add_lab(name, normalized_lab_map, size)
+        lab_repository.add_lab(name, lab_map, size)
 
         return "success"
 
@@ -166,29 +168,3 @@ class LabDesign:
                     contains_rat = True
 
         return contains_rat
-
-    def _generate_lab_map(self, lab_map):
-        """A method to generate an appropriate string to describe the lab_map
-            that can be inserted into the database.
-
-        Args:
-            lab_map: The lab_map which we want to generate a string from.
-
-        Returns:
-            string lab_map_string, which is built from the lab map.
-        """
-
-        lab_map_string = ""
-
-        i=0
-        for row in lab_map:
-            j=0
-            for element in row:
-                if i == self.size - 1 and j == self.size - 1:
-                    lab_map_string += str(element)
-                else:
-                    lab_map_string += str(element)+"#"
-                j+=1
-            i+=1
-
-        return lab_map_string

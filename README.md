@@ -24,6 +24,8 @@ Projektin testit voi suorittaa komennolla `<poetry run invoke test>` tai `<pytho
 
 [Arkkitehtuurikuvaus](https://github.com/saaruuna/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
 
+[Testausdokumentti](https://github.com/saaruuna/ot-harjoitustyo/blob/master/testaus.md)
+
 ## TODO
 
 * käyttöliittymään mahdollisuus luoda ja tallentaa labyrintteja tietokantaan

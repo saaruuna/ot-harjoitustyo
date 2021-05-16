@@ -13,6 +13,9 @@
 | 28.4  | 7              | menu-toiminnallisuutta ja testauksen edistämistä               |
 | 3.5.  | 6              | labyrinttivalikko kuntoon, refaktorointia                      |
 | 4.5.  | 3              | docstringien lisäämistä, testauksen laajentamista              |
+| 14.5. | 3              | pygame_gui kirjaston tutkimista ja selvittelyä                 |
+| 15.5. | 6              | suunnittelutyökalun koodaamista                                |
+| 16.5. | 7              | loppupalautuksen työstämistä: testejä, dokumentaatiota         |
 
 
-Tunteja yhteensä: 59             
+Tunteja yhteensä: 75             

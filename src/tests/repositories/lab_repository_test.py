@@ -21,14 +21,9 @@ class TestLabRepository(unittest.TestCase):
         self.lab1 = Lab("DEMO1", LAB_MAP1)
         self.lab2 = Lab("DEMO2", LAB_MAP2)
 
-    def test_initilization(self):
+    def test_find_all(self):
         labs = lab_repository.find_all()
-
         self.assertEqual(len(labs), 5)
-        self.assertEqual(labs[0].name, self.lab1.name)
-        self.assertEqual(labs[1].name, self.lab2.name)
-        self.assertEqual(labs[0].lab_map, self.lab1.lab_map)
-        self.assertEqual(labs[1].lab_map, self.lab2.lab_map)
 
     def test_find_by_name(self):
         demo1 = lab_repository.find_by_name("DEMO1")
@@ -37,3 +32,16 @@ class TestLabRepository(unittest.TestCase):
         self.assertEqual(demo1.lab_map, self.lab1.lab_map)
         self.assertEqual(demo2.name, self.lab2.name)
         self.assertEqual(demo2.lab_map, self.lab2.lab_map)
+
+    def test_add_lab(self):
+        labs = lab_repository.find_all()
+        self.assertEqual(len(labs), 5)
+        lab_repository.add_lab("DEMOX", LAB_MAP2, 5)
+        labs = lab_repository.find_all()
+        self.assertEqual(len(labs), 6)
+
+    def test_contains_lab(self):
+        self.assertEqual(lab_repository.contains_lab(self.lab1.name), True)
+
+    def test_does_not_contain_lab(self):
+        self.assertEqual(lab_repository.contains_lab("IMPOSSIBLE"), False)
